@@ -40,6 +40,7 @@ import boto3
 # Imports for your app
 from datetime import datetime
 
+# Update your cluster and secret ARNs
 cluster_arn = 'arn:aws:rds:us-east-1:0000000000:cluster:my-cluster' 
 secret_arn = 'arn:aws:secretsmanager:us-east-1:0000000000:secret:my-secret'
 
