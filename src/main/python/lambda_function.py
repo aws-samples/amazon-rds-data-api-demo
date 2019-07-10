@@ -45,13 +45,8 @@ cluster_arn = 'arn:aws:rds:us-east-1:0000000000:cluster:my-cluster'
 secret_arn = 'arn:aws:secretsmanager:us-east-1:0000000000:secret:my-secret'
 
 def lambda_handler(event, context):
-    if 'Records' not in event or 'Sns' not in event['Records'][0]:
-        print ('Not an SNS event!')
-        print (str(event))
-        return
-
-    for record in event['Records']:
-        callRdsDataApi(record['Sns']['Timestamp'], record['Sns']['Message'])
+    # Handle event here and call RDS Data API
+    callRdsDataApi(datetime.now().strftime("%Y-%m-%dT%T.%fZ"), 'some string from event?')
 
 
 def callRdsDataApi(timestamp, message):
